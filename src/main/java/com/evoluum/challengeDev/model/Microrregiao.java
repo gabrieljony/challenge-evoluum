@@ -2,19 +2,19 @@ package com.evoluum.challengeDev.model;
 
 import java.util.Objects;
 
-public class Municipio {
+public class Microrregiao {
 
     private String id;
     private String nome;
-    private Microrregiao microrregiao;
+    private Mesorregiao mesorregiao;
 
-    public Municipio() {
+    public Microrregiao() {
     }
 
-    public Municipio(String id, String nome, Microrregiao microrregiao) {
+    public Microrregiao(String id, String nome, Mesorregiao mesorregiao) {
         this.id = id;
         this.nome = nome;
-        this.microrregiao = microrregiao;
+        this.mesorregiao = mesorregiao;
     }
 
     public String getId() {
@@ -33,20 +33,20 @@ public class Municipio {
         this.nome = nome;
     }
 
-    public Microrregiao getMicrorregiao() {
-        return microrregiao;
+    public Mesorregiao getMesorregiao() {
+        return mesorregiao;
     }
 
-    public void setMicrorregiao(Microrregiao microrregiao) {
-        this.microrregiao = microrregiao;
+    public void setMesorregiao(Mesorregiao mesorregiao) {
+        this.mesorregiao = mesorregiao;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Municipio municipio = (Municipio) o;
-        return Objects.equals(id, municipio.id);
+        Microrregiao that = (Microrregiao) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override
