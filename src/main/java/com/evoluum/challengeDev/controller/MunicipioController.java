@@ -1,7 +1,6 @@
 package com.evoluum.challengeDev.controller;
 
-
-import com.evoluum.challengeDev.model.Estado;
+import com.evoluum.challengeDev.model.Municipio;
 import com.evoluum.challengeDev.service.MunicipioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,8 +22,8 @@ public class MunicipioController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseStatus(code = HttpStatus.OK )
-	public ResponseEntity<List<Estado>> findAll() throws Exception{
-		List<Estado> list = municipioService.findAll();
+	public ResponseEntity<List<Municipio>> findAll() throws Exception{
+		List<Municipio> list = municipioService.findAll();
 		return ResponseEntity.ok(list);
 	}
 	
