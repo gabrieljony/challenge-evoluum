@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class UF {
 
-    private String id;
+    private Long id;
     private String nome;
     private String sigla;
     private Regiao regiao;
@@ -12,18 +12,18 @@ public class UF {
     public UF() {
     }
 
-    public UF(String id, String nome, String sigla, Regiao regiao) {
+    public UF(Long id, String nome, String sigla, Regiao regiao) {
         this.id = id;
         this.nome = nome;
         this.sigla = sigla;
         this.regiao = regiao;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

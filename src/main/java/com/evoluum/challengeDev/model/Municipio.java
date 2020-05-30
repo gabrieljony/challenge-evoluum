@@ -4,24 +4,24 @@ import java.util.Objects;
 
 public class Municipio {
 
-    private String id;
+    private Long id;
     private String nome;
     private Microrregiao microrregiao;
 
     public Municipio() {
     }
 
-    public Municipio(String id, String nome, Microrregiao microrregiao) {
+    public Municipio(Long id, String nome, Microrregiao microrregiao) {
         this.id = id;
         this.nome = nome;
         this.microrregiao = microrregiao;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

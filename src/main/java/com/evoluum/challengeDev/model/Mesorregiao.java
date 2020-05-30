@@ -4,24 +4,24 @@ import java.util.Objects;
 
 public class Mesorregiao {
 
-    private String id;
+    private Long id;
     private String nome;
-    private UF uf;
+    private UF UF;
 
     public Mesorregiao() {
     }
 
-    public Mesorregiao(String id, String nome, UF uf) {
+    public Mesorregiao(Long id, String nome, UF UF) {
         this.id = id;
         this.nome = nome;
-        this.uf = uf;
+        this.UF = UF;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -33,12 +33,12 @@ public class Mesorregiao {
         this.nome = nome;
     }
 
-    public UF getUf() {
-        return uf;
+    public UF getUF() {
+        return UF;
     }
 
-    public void setUf(UF uf) {
-        this.uf = uf;
+    public void setUF(UF UF) {
+        this.UF = UF;
     }
 
     @Override

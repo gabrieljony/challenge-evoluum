@@ -4,24 +4,24 @@ import java.util.Objects;
 
 public class Regiao {
 
-    private String id;
+    private Long id;
     private String nome;
 	private String sigla;
 
     public Regiao() {
     }
 
-    public Regiao(String id, String nome, String sigla) {
+    public Regiao(Long id, String nome, String sigla) {
         this.id = id;
         this.nome = nome;
         this.sigla = sigla;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

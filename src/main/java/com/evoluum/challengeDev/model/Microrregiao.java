@@ -4,24 +4,24 @@ import java.util.Objects;
 
 public class Microrregiao {
 
-    private String id;
+    private Long id;
     private String nome;
     private Mesorregiao mesorregiao;
 
     public Microrregiao() {
     }
 
-    public Microrregiao(String id, String nome, Mesorregiao mesorregiao) {
+    public Microrregiao(Long id, String nome, Mesorregiao mesorregiao) {
         this.id = id;
         this.nome = nome;
         this.mesorregiao = mesorregiao;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -43,7 +43,7 @@ public class EstadoService {
 	public String getIdByNameCity(final String nome) throws Exception {
 		LOG.info("Busca pelo nome da cidade com retorno do ID.");
 		for (Estado estado : findAll()) {
-			 if(estado.getNome().equals(nome)) return estado.getId();
+			 if(estado.getNome().equals(nome)) return estado.getId().toString();
 		}
 		return "City Not found";
 	}

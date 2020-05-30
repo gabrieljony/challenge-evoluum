@@ -31,13 +31,21 @@ public class MunicipioService {
     public List<Municipio> findAll() throws Exception {
         LOG.info("Listagem dos Municipios.");
         ResponseEntity<List<Municipio>> response =
-                restTemplate.exchange(uri.toUriString(), HttpMethod.GET, null, new ParameterizedTypeReference<List<Municipio>>() {}) ;
+                restTemplate.exchange(
+                        uri.toUriString(),
+                        HttpMethod.GET,
+                        null,
+                        new ParameterizedTypeReference<List<Municipio>>() {}) ;
         return response.getBody();
     }
 
     public List<Municipio> findAll(String sigla) throws Exception {
         ResponseEntity<List<Municipio>> response =
-                restTemplate.exchange(uri.toUriString().replace("{UF}", sigla), HttpMethod.GET, null, new ParameterizedTypeReference<List<Municipio>>() {}) ;
+                restTemplate.exchange(
+                        uri.toUriString().replace("{UF}", sigla),
+                        HttpMethod.GET,
+                        null,
+                        new ParameterizedTypeReference<List<Municipio>>() {}) ;
         return response.getBody();
     }
 }
