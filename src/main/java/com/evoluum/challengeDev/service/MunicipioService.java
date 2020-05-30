@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -28,24 +29,8 @@ public class MunicipioService {
     @Autowired
     private RestTemplate restTemplate;
 
-    public List<Municipio> findAll() throws Exception {
-        LOG.info("Listagem dos Municipios.");
-        ResponseEntity<List<Municipio>> response =
-                restTemplate.exchange(
-                        uri.toUriString(),
-                        HttpMethod.GET,
-                        null,
-                        new ParameterizedTypeReference<List<Municipio>>() {}) ;
-        return response.getBody();
-    }
-
     public List<Municipio> findAll(String sigla) throws Exception {
-        ResponseEntity<List<Municipio>> response =
-                restTemplate.exchange(
-                        uri.toUriString().replace("{UF}", sigla),
-                        HttpMethod.GET,
-                        null,
-                        new ParameterizedTypeReference<List<Municipio>>() {}) ;
-        return response.getBody();
+        Municipio[] response = restTemplate.getForObject(uri.toUriString().replace("{UF}", sigla), Municipio[].class);
+        return Arrays.asList(response);
     }
 }

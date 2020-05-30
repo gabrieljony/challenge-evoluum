@@ -6,15 +6,15 @@ public class Mesorregiao {
 
     private Long id;
     private String nome;
-    private UF UF;
+    private UF uf;
 
     public Mesorregiao() {
     }
 
-    public Mesorregiao(Long id, String nome, UF UF) {
+    public Mesorregiao(Long id, String nome, UF uf) {
         this.id = id;
         this.nome = nome;
-        this.UF = UF;
+        this.uf = uf;
     }
 
     public Long getId() {
@@ -34,11 +34,11 @@ public class Mesorregiao {
     }
 
     public UF getUF() {
-        return UF;
+        return uf;
     }
 
-    public void setUF(UF UF) {
-        this.UF = UF;
+    public void setUF(UF uf) {
+        this.uf = uf;
     }
 
     @Override

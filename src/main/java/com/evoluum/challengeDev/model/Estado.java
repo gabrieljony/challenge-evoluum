@@ -9,6 +9,11 @@ public class Estado {
     private String sigla;
     private Regiao regiao;
 
+    public String getNomeFormatado() {
+        String nomeFormatado = new StringBuilder().append(nome).append("/").append(sigla).toString();
+        return nomeFormatado;
+    }
+
     public Estado() {
     }
 
