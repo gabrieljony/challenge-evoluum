@@ -2,19 +2,21 @@ package com.evoluum.challengeDev.model;
 
 import java.util.Objects;
 
-public class Mesorregiao {
+public class UF {
 
     private String id;
     private String nome;
-    private UF uf;
+    private String sigla;
+    private Regiao regiao;
 
-    public Mesorregiao() {
+    public UF() {
     }
 
-    public Mesorregiao(String id, String nome, UF uf) {
+    public UF(String id, String nome, String sigla, Regiao regiao) {
         this.id = id;
         this.nome = nome;
-        this.uf = uf;
+        this.sigla = sigla;
+        this.regiao = regiao;
     }
 
     public String getId() {
@@ -33,20 +35,28 @@ public class Mesorregiao {
         this.nome = nome;
     }
 
-    public UF getUf() {
-        return uf;
+    public String getSigla() {
+        return sigla;
     }
 
-    public void setUf(UF uf) {
-        this.uf = uf;
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
+    }
+
+    public Regiao getRegiao() {
+        return regiao;
+    }
+
+    public void setRegiao(Regiao regiao) {
+        this.regiao = regiao;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Mesorregiao that = (Mesorregiao) o;
-        return Objects.equals(id, that.id);
+        UF estado = (UF) o;
+        return Objects.equals(id, estado.id);
     }
 
     @Override
