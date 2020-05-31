@@ -9,7 +9,7 @@ public class Municipio {
     private Microrregiao microrregiao;
 
     public String getNomeFormatado() {
-        String nomeFormatado = new StringBuilder().append(nome).append("/").append(microrregiao.getMesorregiao().getUF()).toString();
+        String nomeFormatado = new StringBuilder().append(nome).append("/").append(microrregiao.getMesorregiao().getUF().getSigla()).toString();
         return nomeFormatado;
     }
 
