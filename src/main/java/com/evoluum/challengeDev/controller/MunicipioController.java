@@ -1,5 +1,6 @@
 package com.evoluum.challengeDev.controller;
 
+import com.evoluum.challengeDev.model.Estado;
 import com.evoluum.challengeDev.model.Municipio;
 import com.evoluum.challengeDev.service.CSVService;
 import com.evoluum.challengeDev.service.MunicipioService;
@@ -35,11 +36,19 @@ public class MunicipioController {
 	public @ResponseBody void exportarCsv(HttpServletResponse response, @PathVariable String sigla) throws Exception {
 		csvService.download( new ReportMunicipioSalesCsvView().addInfo(municipioService.findAll(sigla))) ;
 	}
+
 	@RequestMapping(value = "/name/{nomeCidade}", method = RequestMethod.GET)
 	@ResponseStatus(code = HttpStatus.OK )
 	public ResponseEntity<String> findByIDNameCity(@PathVariable String nomeCidade) throws Exception{
 		String cidade = municipioService.getIdPorNomeCidade(nomeCidade);
 		return ResponseEntity.ok(cidade);
 	}
+
+    @RequestMapping(method = RequestMethod.GET)
+    @ResponseStatus(code = HttpStatus.OK )
+    public ResponseEntity<List<Municipio>> findAll() throws Exception{
+        List<Municipio> list = municipioService.findAll();
+        return ResponseEntity.ok(list);
+    }
 	
 }
