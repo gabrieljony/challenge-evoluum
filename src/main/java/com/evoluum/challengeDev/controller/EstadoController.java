@@ -34,7 +34,7 @@ public class EstadoController {
 
 	@RequestMapping(value = "/csv", method = RequestMethod.GET, produces = "text/csv")
 	@ResponseStatus(code = HttpStatus.OK )
-	public @ResponseBody void exportarCsv (HttpServletResponse response) throws Exception {
+	public @ResponseBody void exportarCsv(HttpServletResponse response) throws Exception {
 		csvService.download( new ReportEstadoSalesCsvView().addInfo(estadoService.findAll())) ;
 	}
 	
