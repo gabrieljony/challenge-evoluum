@@ -50,5 +50,11 @@ public class MunicipioController {
         List<Municipio> list = municipioService.findAll();
         return ResponseEntity.ok(list);
     }
+
+    @RequestMapping(value = "/csv", method = RequestMethod.GET, produces = "text/csv")
+    @ResponseStatus(code = HttpStatus.OK )
+    public @ResponseBody void exportarCsv(HttpServletResponse response) throws Exception {
+        csvService.download( new ReportMunicipioSalesCsvView().addInfo(municipioService.findAll())) ;
+    }
 	
 }
