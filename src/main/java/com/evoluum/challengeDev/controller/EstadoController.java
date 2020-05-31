@@ -7,6 +7,7 @@ import com.evoluum.challengeDev.view.csv.ReportEstadoSalesCsvView;
 import com.evoluum.challengeDev.model.Estado;
 import com.evoluum.challengeDev.service.CSVService;
 import com.evoluum.challengeDev.service.EstadoService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,8 @@ public class EstadoController {
 
 	@Autowired
 	private CSVService csvService;
-	
+
+	@ApiOperation(value="Busca por todos os Estados")
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseStatus(code = HttpStatus.OK )
 	public ResponseEntity<List<Estado>> findAll() throws Exception{
@@ -32,6 +34,7 @@ public class EstadoController {
 		return ResponseEntity.ok(list);
 	}
 
+	@ApiOperation(value="Busca por todos os Estados e retorna um csv")
 	@RequestMapping(value = "/csv", method = RequestMethod.GET, produces = "text/csv")
 	@ResponseStatus(code = HttpStatus.OK )
 	public @ResponseBody void exportarCsv(HttpServletResponse response) throws Exception {
