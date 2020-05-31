@@ -52,10 +52,10 @@ public class SwaggerConfig {
                 "API de localidades",
                 "API referente às divisões político-administrativas do Brasil.",
                 "Versão 1.0",
-                "https://localhost:8081/",
-                new Contact("Gabriel Jony", "https://localhost:8081/", "gabjony@gmail.com"),
+                "http://localhost:8081/swagger-ui.html",
+                new Contact("Gabriel Jony", "https://gabrieljony.github.io/", "gabjony@gmail.com"),
                 "Permitido uso para estudantes",
-                "https://localhost:8081/",
+                "http://localhost:8081/swagger-ui.html",
                 Collections.emptyList() // Vendor Extensions
         );
     }
