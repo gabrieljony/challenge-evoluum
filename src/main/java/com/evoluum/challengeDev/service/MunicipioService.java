@@ -12,7 +12,10 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.management.BadAttributeValueExpException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -30,7 +33,14 @@ public class MunicipioService {
     private RestTemplate restTemplate;
 
     public List<Municipio> findAll(String sigla) throws Exception {
-        Municipio[] response = restTemplate.getForObject(uri.toUriString().replace("{UF}", sigla), Municipio[].class);
-        return Arrays.asList(response);
+        Municipio[] municipio = restTemplate.getForObject(
+                uri.toUriString().replace("{UF}", sigla), Municipio[].class);
+
+        if(municipio.length > 0) {
+            return Arrays.asList(municipio);
+        }
+        else
+            throw new BadAttributeValueExpException("Estado inválido");
+
     }
 }

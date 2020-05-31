@@ -1,20 +1,24 @@
 package com.evoluum.challengeDev.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public class Mesorregiao {
 
     private Long id;
     private String nome;
-    private UF uf;
+
+    @JsonProperty(value = "UF")
+    private Regiao UF;
 
     public Mesorregiao() {
     }
 
-    public Mesorregiao(Long id, String nome, UF uf) {
+    public Mesorregiao(Long id, String nome, Regiao UF) {
         this.id = id;
         this.nome = nome;
-        this.uf = uf;
+        this.UF = UF;
     }
 
     public Long getId() {
@@ -33,12 +37,12 @@ public class Mesorregiao {
         this.nome = nome;
     }
 
-    public UF getUF() {
-        return uf;
+    public Regiao getUF() {
+        return UF;
     }
 
-    public void setUF(UF uf) {
-        this.uf = uf;
+    public void setUF(Regiao UF) {
+        this.UF = UF;
     }
 
     @Override

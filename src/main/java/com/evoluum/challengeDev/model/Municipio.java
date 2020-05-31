@@ -8,6 +8,11 @@ public class Municipio {
     private String nome;
     private Microrregiao microrregiao;
 
+    public String getNomeFormatado() {
+        String nomeFormatado = new StringBuilder().append(nome).append("/").append(microrregiao.getMesorregiao().getUF()).toString();
+        return nomeFormatado;
+    }
+
     public Municipio() {
     }
 
