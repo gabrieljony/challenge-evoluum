@@ -40,7 +40,19 @@ public class MunicipioService {
             return Arrays.asList(municipio);
         }
         else
-            throw new BadAttributeValueExpException("Estado inválido");
+            throw new BadAttributeValueExpException("Municipio inválido");
 
+    }
+
+    public List<Municipio> findAll() throws Exception {
+        Municipio[] municipio = restTemplate.getForObject("https://servicodados.ibge.gov.br/api/v1/localidades/municipios", Municipio[].class);
+        return Arrays.asList(municipio);
+    }
+
+    public String getIdPorNomeCidade(final String nome) throws Exception {
+        for (Municipio municipio : findAll()) {
+            if( municipio.getNome().equals(nome) ) return municipio.getId().toString();
+        }
+        return "A Cidade " + nome + " não foi localizada em nossa base de dados" ;
     }
 }

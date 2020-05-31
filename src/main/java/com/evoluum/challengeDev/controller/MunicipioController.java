@@ -3,7 +3,6 @@ package com.evoluum.challengeDev.controller;
 import com.evoluum.challengeDev.model.Municipio;
 import com.evoluum.challengeDev.service.CSVService;
 import com.evoluum.challengeDev.service.MunicipioService;
-import com.evoluum.challengeDev.view.csv.ReportEstadoSalesCsvView;
 import com.evoluum.challengeDev.view.csv.ReportMunicipioSalesCsvView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,6 +34,12 @@ public class MunicipioController {
 	@ResponseStatus(code = HttpStatus.OK )
 	public @ResponseBody void exportarCsv(HttpServletResponse response, @PathVariable String sigla) throws Exception {
 		csvService.download( new ReportMunicipioSalesCsvView().addInfo(municipioService.findAll(sigla))) ;
+	}
+	@RequestMapping(value = "/name/{nomeCidade}", method = RequestMethod.GET)
+	@ResponseStatus(code = HttpStatus.OK )
+	public ResponseEntity<String> findByIDNameCity(@PathVariable String nomeCidade) throws Exception{
+		String cidade = municipioService.getIdPorNomeCidade(nomeCidade);
+		return ResponseEntity.ok(cidade);
 	}
 	
 }
